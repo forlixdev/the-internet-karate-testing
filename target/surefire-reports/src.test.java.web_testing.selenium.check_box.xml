@@ -1,0 +1,11 @@
+<testsuite failures="0" name="src/test/java/web_testing/selenium/check_box.feature" skipped="0" tests="1" time="2.557716">
+  <testcase classname="src.test.java.web_testing.selenium.check_box" name="click on both checkboxes" time="2.557716">
+    <system-out>* def checkBox1 = "#checkboxes &gt; input[type=checkbox]:nth-child(1)" ....... passed
+* def checkBox2 = "#checkboxes &gt; input[type=checkbox]:nth-child(3)" ....... passed
+Given driver host + '/checkboxes' ......................................... passed
+When waitForEnabled(checkBox1).click() .................................... passed
+And waitForEnabled(checkBox2).click() ..................................... passed
+Then match attribute(checkBox1, 'checked') != null ........................ passed
+And match attribute(checkBox2, 'checked') == null ......................... passed</system-out>
+  </testcase>
+</testsuite>

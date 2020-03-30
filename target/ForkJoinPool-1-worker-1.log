@@ -1,0 +1,11 @@
+09:28:00.488 system property for environment is: test, default "test" 
+09:28:00.491 the browser set is: chrome, default: "chrome" 
+09:28:00.492 the grid url set is: false, default: false 
+09:28:00.496 system property for proxy is:  false 
+09:28:00.496 the proxy url set is: false, default: false 
+09:28:00.498 the value for driver set is: chrome 
+09:28:00.542 Selected Chrome 
+09:28:00.600 [print] http://admin:admin@127.0.0.1:7080
+08:38:54.360 [print] http://admin:admin@127.0.0.1:7080
+:7080
+
