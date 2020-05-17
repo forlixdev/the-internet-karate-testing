@@ -45,7 +45,7 @@
   .embed img { width: 100%; }
 </style>
 
-<title>src.test.java.web_testing.selenium.digest_auth</title>
+<title>src.test.java.web_testing.selenium.dynamic_controls</title>
 <script>window.onload = function() {
   var possibleModes = ['failed', 'skipped', 'passed'];
   var tests = {};
@@ -168,47 +168,43 @@
 </img><div>
 <div class="scenario">
 <div class="scenario-heading">
-<span class="scenario-keyword">Scenario: [1:11]</span><span class="scenario-name">access to a url protected through a digest authentication</span>
+<span class="scenario-keyword">Scenario: [2:13]</span><span class="scenario-name">Enable/disable</span>
 </div>
 <div class="step-row">
-<div class="step-cell passed">* def user = "admin"</div>
-<div class="time-cell passed">0.002363</div>
+<div class="step-cell passed">* def textbox_selector = "#input-example &gt; input[type=text]"</div>
+<div class="time-cell passed">0.00278</div>
 </div>
-<div class="preformatted">17:20:23.476 system property for environment is: test, default "test" 
-17:20:23.479 the browser set is: chrome, default: "chrome" 
-17:20:23.481 the grid url set is: false, default: false 
-17:20:23.485 system property for proxy is:  false 
-17:20:23.486 the proxy url set is: false, default: false 
-17:20:23.487 the value for driver set is: chrome 
-17:20:23.534 Selected Chrome</div>
+<div class="preformatted">21:04:57.103 system property for environment is: test, default "test" 
+21:04:57.105 the browser set is: chrome, default: "chrome" 
+21:04:57.107 the grid url set is: false, default: false 
+21:04:57.110 system property for proxy is:  false 
+21:04:57.111 the proxy url set is: false, default: false 
+21:04:57.113 the value for driver set is: chrome 
+21:04:57.154 Selected Chrome</div>
 <div class="step-row">
-<div class="step-cell passed">* def password = "admin"</div>
-<div class="time-cell passed">0.00013</div>
-</div>
-<div class="step-row">
-<div class="step-cell passed">* def get_auth_url = function(fname) { return "http://" + user + ":" + password + "@" + host.replace("http://","") }</div>
-<div class="time-cell passed">0.002133</div>
+<div class="step-cell passed">* def button_selector = "#input-example &gt; button"</div>
+<div class="time-cell passed">0.001553</div>
 </div>
 <div class="step-row">
-<div class="step-cell passed">* def full_url = get_auth_url()</div>
-<div class="time-cell passed">0.036964</div>
+<div class="step-cell passed">Given driver host + '/dynamic_controls'</div>
+<div class="time-cell passed">2.317814</div>
 </div>
 <div class="step-row">
-<div class="step-cell passed">* print full_url</div>
-<div class="time-cell passed">0.000432</div>
-</div>
-<div class="preformatted">17:20:23.593 [print] http://admin:admin@127.0.0.1:5000</div>
-<div class="step-row">
-<div class="step-cell passed">* def authentication_success_sel = "#content &gt; div &gt; h3"</div>
-<div class="time-cell passed">0.00479</div>
+<div class="step-cell passed">And match attribute(textbox_selector, 'disabled') != null</div>
+<div class="time-cell passed">0.059066</div>
 </div>
 <div class="step-row">
-<div class="step-cell passed">Given driver full_url + '/digest_auth'</div>
-<div class="time-cell passed">2.22642</div>
+<div class="step-cell passed">When waitFor(button_selector).click()</div>
+<div class="time-cell passed">0.037019</div>
 </div>
 <div class="step-row">
-<div class="step-cell passed">Then match waitFor(authentication_success_sel).text == 'Digest Auth'</div>
-<div class="time-cell passed">0.068813</div>
+<div class="step-cell passed">Then match waitFor("#message").text == "It's enabled!"</div>
+<div class="time-cell passed">3.031046</div>
+</div>
+<div class="preformatted">21:04:59.597 waitUntil (js) - retry #1</div>
+<div class="step-row">
+<div class="step-cell passed">And match attribute(textbox_selector, 'disabled') == null</div>
+<div class="time-cell passed">0.006819</div>
 </div>
 </div>
 </div>

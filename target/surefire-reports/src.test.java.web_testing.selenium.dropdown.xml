@@ -1,0 +1,11 @@
+<testsuite failures="0" name="src/test/java/web_testing/selenium/dropdown.feature" skipped="0" tests="1" time="2.714081">
+  <testcase classname="src.test.java.web_testing.selenium.dropdown" name="click on the second checkbox with click" time="2.714081">
+    <system-out>* def dropdown_list = "select[id=dropdown]" ............................... passed
+* def dropdown_selection_1 = "#dropdown &gt; option:nth-child(2)" ............ passed
+* def dropdown_selection_2 = "#dropdown &gt; option:nth-child(3)" ............ passed
+Given driver host + '/dropdown' ........................................... passed
+When waitFor(dropdown_list).click() ....................................... passed
+And input(dropdown_list,'Option 2') ....................................... passed
+Then match attribute(dropdown_selection_2, 'selected') == 'selected' ...... passed</system-out>
+  </testcase>
+</testsuite>

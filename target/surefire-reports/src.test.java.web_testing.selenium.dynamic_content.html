@@ -45,7 +45,7 @@
   .embed img { width: 100%; }
 </style>
 
-<title>src.test.java.web_testing.selenium.digest_auth</title>
+<title>src.test.java.web_testing.selenium.dynamic_content</title>
 <script>window.onload = function() {
   var possibleModes = ['failed', 'skipped', 'passed'];
   var tests = {};
@@ -168,47 +168,51 @@
 </img><div>
 <div class="scenario">
 <div class="scenario-heading">
-<span class="scenario-keyword">Scenario: [1:11]</span><span class="scenario-name">access to a url protected through a digest authentication</span>
+<span class="scenario-keyword">Scenario: [1:8]</span><span class="scenario-name">check that content changes after refresh</span>
 </div>
 <div class="step-row">
-<div class="step-cell passed">* def user = "admin"</div>
-<div class="time-cell passed">0.002363</div>
+<div class="step-cell passed">* def dynamic_title = "#content &gt; div &gt; h3"</div>
+<div class="time-cell passed">0.00253</div>
 </div>
-<div class="preformatted">17:20:23.476 system property for environment is: test, default "test" 
-17:20:23.479 the browser set is: chrome, default: "chrome" 
-17:20:23.481 the grid url set is: false, default: false 
-17:20:23.485 system property for proxy is:  false 
-17:20:23.486 the proxy url set is: false, default: false 
-17:20:23.487 the value for driver set is: chrome 
-17:20:23.534 Selected Chrome</div>
+<div class="preformatted">18:05:31.947 system property for environment is: test, default "test" 
+18:05:31.951 the browser set is: chrome, default: "chrome" 
+18:05:31.953 the grid url set is: false, default: false 
+18:05:31.957 system property for proxy is:  false 
+18:05:31.958 the proxy url set is: false, default: false 
+18:05:31.959 the value for driver set is: chrome 
+18:05:32.006 Selected Chrome</div>
 <div class="step-row">
-<div class="step-cell passed">* def password = "admin"</div>
-<div class="time-cell passed">0.00013</div>
-</div>
-<div class="step-row">
-<div class="step-cell passed">* def get_auth_url = function(fname) { return "http://" + user + ":" + password + "@" + host.replace("http://","") }</div>
-<div class="time-cell passed">0.002133</div>
+<div class="step-cell passed">* def first_paragraph = "#content &gt; div:nth-child(1) &gt; div.large-10.columns"</div>
+<div class="time-cell passed">0.002157</div>
 </div>
 <div class="step-row">
-<div class="step-cell passed">* def full_url = get_auth_url()</div>
-<div class="time-cell passed">0.036964</div>
+<div class="step-cell passed">Given driver host + '/dynamic_content'</div>
+<div class="time-cell passed">2.242898</div>
 </div>
 <div class="step-row">
-<div class="step-cell passed">* print full_url</div>
-<div class="time-cell passed">0.000432</div>
-</div>
-<div class="preformatted">17:20:23.593 [print] http://admin:admin@127.0.0.1:5000</div>
-<div class="step-row">
-<div class="step-cell passed">* def authentication_success_sel = "#content &gt; div &gt; h3"</div>
-<div class="time-cell passed">0.00479</div>
+<div class="step-cell passed">And match text(dynamic_title) == 'Dynamic Content'</div>
+<div class="time-cell passed">0.065729</div>
 </div>
 <div class="step-row">
-<div class="step-cell passed">Given driver full_url + '/digest_auth'</div>
-<div class="time-cell passed">2.22642</div>
+<div class="step-cell passed">* def first_paragraph_content_before = text(first_paragraph)</div>
+<div class="time-cell passed">0.007938</div>
 </div>
 <div class="step-row">
-<div class="step-cell passed">Then match waitFor(authentication_success_sel).text == 'Digest Auth'</div>
-<div class="time-cell passed">0.068813</div>
+<div class="step-cell passed">* print first_paragraph_content</div>
+<div class="time-cell passed">0.005446</div>
+</div>
+<div class="preformatted">18:05:34.351 [print]</div>
+<div class="step-row">
+<div class="step-cell passed">When refresh()</div>
+<div class="time-cell passed">0.079135</div>
+</div>
+<div class="step-row">
+<div class="step-cell passed">And match text(dynamic_title) == 'Dynamic Content'</div>
+<div class="time-cell passed">0.006395</div>
+</div>
+<div class="step-row">
+<div class="step-cell passed">And match text(first_paragraph) != first_paragraph_content_before</div>
+<div class="time-cell passed">0.006197</div>
 </div>
 </div>
 </div>

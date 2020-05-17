@@ -1,0 +1,13 @@
+<testsuite failures="0" name="src/test/java/web_testing/selenium/dynamic_content.feature" skipped="0" tests="1" time="2.418424">
+  <testcase classname="src.test.java.web_testing.selenium.dynamic_content" name="check that content changes after refresh" time="2.418424">
+    <system-out>* def dynamic_title = "#content &gt; div &gt; h3" ............................... passed
+* def first_paragraph = "#content &gt; div:nth-child(1) &gt; div.large-10.columns" . passed
+Given driver host + '/dynamic_content' .................................... passed
+And match text(dynamic_title) == 'Dynamic Content' ........................ passed
+* def first_paragraph_content_before = text(first_paragraph) .............. passed
+* print first_paragraph_content ........................................... passed
+When refresh() ............................................................ passed
+And match text(dynamic_title) == 'Dynamic Content' ........................ passed
+And match text(first_paragraph) != first_paragraph_content_before ......... passed</system-out>
+  </testcase>
+</testsuite>

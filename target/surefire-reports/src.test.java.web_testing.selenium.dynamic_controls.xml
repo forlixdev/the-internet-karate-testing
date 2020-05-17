@@ -1,0 +1,11 @@
+<testsuite failures="0" name="src/test/java/web_testing/selenium/dynamic_controls.feature" skipped="0" tests="1" time="5.456098">
+  <testcase classname="src.test.java.web_testing.selenium.dynamic_controls" name="Enable/disable" time="5.456098">
+    <system-out>* def textbox_selector = "#input-example &gt; input[type=text]" .............. passed
+* def button_selector = "#input-example &gt; button" ......................... passed
+Given driver host + '/dynamic_controls' ................................... passed
+And match attribute(textbox_selector, 'disabled') != null ................. passed
+When waitFor(button_selector).click() ..................................... passed
+Then match waitFor("#message").text == "It's enabled!" .................... passed
+And match attribute(textbox_selector, 'disabled') == null ................. passed</system-out>
+  </testcase>
+</testsuite>

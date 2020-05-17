@@ -1,5 +1,5 @@
-<testsuite failures="0" name="src/test/java/web_testing/selenium/digest_auth.feature" skipped="0" tests="1" time="2.530362">
-  <testcase classname="src.test.java.web_testing.selenium.digest_auth" name="access to a url protected through a digest authentication" time="2.530362">
+<testsuite failures="0" name="src/test/java/web_testing/selenium/digest_auth.feature" skipped="0" tests="1" time="2.342044">
+  <testcase classname="src.test.java.web_testing.selenium.digest_auth" name="access to a url protected through a digest authentication" time="2.342044">
     <system-out>* def user = "admin" ...................................................... passed
 * def password = "admin" .................................................. passed
 * def get_auth_url = function(fname) { return "http://" + user + ":" + password + "@" + host.replace("http://","") } . passed

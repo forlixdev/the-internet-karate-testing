@@ -1,11 +1,17 @@
-09:28:00.488 system property for environment is: test, default "test" 
-09:28:00.491 the browser set is: chrome, default: "chrome" 
-09:28:00.492 the grid url set is: false, default: false 
-09:28:00.496 system property for proxy is:  false 
-09:28:00.496 the proxy url set is: false, default: false 
-09:28:00.498 the value for driver set is: chrome 
-09:28:00.542 Selected Chrome 
-09:28:00.600 [print] http://admin:admin@127.0.0.1:7080
-08:38:54.360 [print] http://admin:admin@127.0.0.1:7080
-:7080
-
+21:04:57.103 system property for environment is: test, default "test" 
+21:04:57.105 the browser set is: chrome, default: "chrome" 
+21:04:57.107 the grid url set is: false, default: false 
+21:04:57.110 system property for proxy is:  false 
+21:04:57.111 the proxy url set is: false, default: false 
+21:04:57.113 the value for driver set is: chrome 
+21:04:57.154 Selected Chrome 
+21:04:59.597 waitUntil (js) - retry #1
+nment is: test, default "test" 
+21:00:28.843 the browser set is: chrome, default: "chrome" 
+21:00:28.844 the grid url set is: false, default: false 
+21:00:28.846 system property for proxy is:  false 
+21:00:28.847 the proxy url set is: false, default: false 
+21:00:28.847 the value for driver set is: chrome 
+21:00:28.849 Selected Chrome 
+21:00:28.856 preferred port 9515 not available, will use: 64756
+0010e44445d chromedriver + 726109\n5   chromedriver                        0x000000010e43e6b5 chromedriver + 702133\n6   chromedriver                        0x000000010e44d593 chromedriver + 763283\n7   chromedriver                        0x000000010e3e0e28 chromedriver + 319016\n8   chromedriver                        0x000000010e3d4713 chromedriver + 268051\n9   chromedriver                        0x000000010e3ae21d chromedriver + 111133\n10  chromedriver                        0x000000010e3af1c5 chromedriver + 115141\n11  chromedriver                        0x000000010e7ca03f chromedriver + 4419647\n12  chromedriver                        0x000000010e7d6cda chromedriver + 4472026\n13  chromedriver                        0x000000010e7d6a77 chromedriver + 4471415\n14  chromedriver                        0x000000010e7ae189 chromedriver + 4305289\n15  chromedriver                        0x000000010e7d7587 chromedriver + 4474247\n16  chromedriver                        0x000000010e7bfdc7 chromedriver + 4378055\n17  chromedriver                        0x000000010e7ed7f4 chromedriver + 4564980\n18  chromedriver                        0x000000010e80d717 chromedriver + 4695831\n19  libsystem_pthread.dylib             0x00007fff6f511109 _pthread_start + 148\n20  libsystem_pthread.dylib             0x00007fff6f50cb8b thread_start + 15\n","error":"no such window","message":"no such window: window was already closed\n  (Session info: chrome=81.0.4044.92)"}', expected: 'Delete', reason: not equal

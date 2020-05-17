@@ -45,7 +45,7 @@
   .embed img { width: 100%; }
 </style>
 
-<title>src.test.java.web_testing.selenium.digest_auth</title>
+<title>src.test.java.web_testing.selenium.add_remove_elements</title>
 <script>window.onload = function() {
   var possibleModes = ['failed', 'skipped', 'passed'];
   var tests = {};
@@ -168,47 +168,52 @@
 </img><div>
 <div class="scenario">
 <div class="scenario-heading">
-<span class="scenario-keyword">Scenario: [1:11]</span><span class="scenario-name">access to a url protected through a digest authentication</span>
+<span class="scenario-keyword">Scenario: [1:8]</span><span class="scenario-name">click to add an element and then remove it</span>
 </div>
 <div class="step-row">
-<div class="step-cell passed">* def user = "admin"</div>
-<div class="time-cell passed">0.002363</div>
+<div class="step-cell passed">* def addButton = "#content &gt; div &gt; button"</div>
+<div class="time-cell passed">0.002733</div>
 </div>
-<div class="preformatted">17:20:23.476 system property for environment is: test, default "test" 
-17:20:23.479 the browser set is: chrome, default: "chrome" 
-17:20:23.481 the grid url set is: false, default: false 
-17:20:23.485 system property for proxy is:  false 
-17:20:23.486 the proxy url set is: false, default: false 
-17:20:23.487 the value for driver set is: chrome 
-17:20:23.534 Selected Chrome</div>
+<div class="preformatted">16:09:23.500 system property for environment is: test, default "test" 
+16:09:23.502 the browser set is: chrome, default: "chrome" 
+16:09:23.504 the grid url set is: false, default: false 
+16:09:23.507 system property for proxy is:  false 
+16:09:23.508 the proxy url set is: false, default: false 
+16:09:23.509 the value for driver set is: chrome 
+16:09:23.547 Selected Chrome</div>
 <div class="step-row">
-<div class="step-cell passed">* def password = "admin"</div>
-<div class="time-cell passed">0.00013</div>
-</div>
-<div class="step-row">
-<div class="step-cell passed">* def get_auth_url = function(fname) { return "http://" + user + ":" + password + "@" + host.replace("http://","") }</div>
-<div class="time-cell passed">0.002133</div>
+<div class="step-cell passed">* def deleteButton = "#elements &gt; button"</div>
+<div class="time-cell passed">0.00156</div>
 </div>
 <div class="step-row">
-<div class="step-cell passed">* def full_url = get_auth_url()</div>
-<div class="time-cell passed">0.036964</div>
+<div class="step-cell passed">Given driver host + '/add_remove_elements/'</div>
+<div class="time-cell passed">1.898325</div>
 </div>
 <div class="step-row">
-<div class="step-cell passed">* print full_url</div>
-<div class="time-cell passed">0.000432</div>
-</div>
-<div class="preformatted">17:20:23.593 [print] http://admin:admin@127.0.0.1:5000</div>
-<div class="step-row">
-<div class="step-cell passed">* def authentication_success_sel = "#content &gt; div &gt; h3"</div>
-<div class="time-cell passed">0.00479</div>
+<div class="step-cell passed">And match exists(deleteButton).exist == null</div>
+<div class="time-cell passed">0.066693</div>
 </div>
 <div class="step-row">
-<div class="step-cell passed">Given driver full_url + '/digest_auth'</div>
-<div class="time-cell passed">2.22642</div>
+<div class="step-cell passed">And delay(1000)</div>
+<div class="time-cell passed">1.015326</div>
 </div>
 <div class="step-row">
-<div class="step-cell passed">Then match waitFor(authentication_success_sel).text == 'Digest Auth'</div>
-<div class="time-cell passed">0.068813</div>
+<div class="step-cell passed">When click(addButton)</div>
+<div class="time-cell passed">3.045512</div>
+</div>
+<div class="step-row">
+<div class="step-cell failed">Then match driver.text(deleteButton) == "Delete"</div>
+<div class="time-cell failed">0.012454</div>
+</div>
+<div class="preformatted">16:09:29.609 assertion failed: path: $, actual: '{"stacktrace":"0   chromedriver                        0x000000010e807789 chromedriver + 4671369\n1   chromedriver                        0x000000010e7a25d3 chromedriver + 4257235\n2   chromedriver                        0x000000010e44c00f chromedriver + 757775\n3   chromedriver                        0x000000010e443283 chromedriver + 721539\n4   chromedriver                        0x000000010e44445d chromedriver + 726109\n5   chromedriver                        0x000000010e43e6b5 chromedriver + 702133\n6   chromedriver                        0x000000010e44d593 chromedriver + 763283\n7   chromedriver                        0x000000010e3e0e28 chromedriver + 319016\n8   chromedriver                        0x000000010e3d4713 chromedriver + 268051\n9   chromedriver                        0x000000010e3ae21d chromedriver + 111133\n10  chromedriver                        0x000000010e3af1c5 chromedriver + 115141\n11  chromedriver                        0x000000010e7ca03f chromedriver + 4419647\n12  chromedriver                        0x000000010e7d6cda chromedriver + 4472026\n13  chromedriver                        0x000000010e7d6a77 chromedriver + 4471415\n14  chromedriver                        0x000000010e7ae189 chromedriver + 4305289\n15  chromedriver                        0x000000010e7d7587 chromedriver + 4474247\n16  chromedriver                        0x000000010e7bfdc7 chromedriver + 4378055\n17  chromedriver                        0x000000010e7ed7f4 chromedriver + 4564980\n18  chromedriver                        0x000000010e80d717 chromedriver + 4695831\n19  libsystem_pthread.dylib             0x00007fff6f511109 _pthread_start + 148\n20  libsystem_pthread.dylib             0x00007fff6f50cb8b thread_start + 15\n","error":"no such window","message":"no such window: window was already closed\n  (Session info: chrome=81.0.4044.92)"}', expected: 'Delete', reason: not equal
+add_remove_elements.feature:13 - path: $, actual: '{"stacktrace":"0   chromedriver                        0x000000010e807789 chromedriver + 4671369\n1   chromedriver                        0x000000010e7a25d3 chromedriver + 4257235\n2   chromedriver                        0x000000010e44c00f chromedriver + 757775\n3   chromedriver                        0x000000010e443283 chromedriver + 721539\n4   chromedriver                        0x000000010e44445d chromedriver + 726109\n5   chromedriver                        0x000000010e43e6b5 chromedriver + 702133\n6   chromedriver                        0x000000010e44d593 chromedriver + 763283\n7   chromedriver                        0x000000010e3e0e28 chromedriver + 319016\n8   chromedriver                        0x000000010e3d4713 chromedriver + 268051\n9   chromedriver                        0x000000010e3ae21d chromedriver + 111133\n10  chromedriver                        0x000000010e3af1c5 chromedriver + 115141\n11  chromedriver                        0x000000010e7ca03f chromedriver + 4419647\n12  chromedriver                        0x000000010e7d6cda chromedriver + 4472026\n13  chromedriver                        0x000000010e7d6a77 chromedriver + 4471415\n14  chromedriver                        0x000000010e7ae189 chromedriver + 4305289\n15  chromedriver                        0x000000010e7d7587 chromedriver + 4474247\n16  chromedriver                        0x000000010e7bfdc7 chromedriver + 4378055\n17  chromedriver                        0x000000010e7ed7f4 chromedriver + 4564980\n18  chromedriver                        0x000000010e80d717 chromedriver + 4695831\n19  libsystem_pthread.dylib             0x00007fff6f511109 _pthread_start + 148\n20  libsystem_pthread.dylib             0x00007fff6f50cb8b thread_start + 15\n","error":"no such window","message":"no such window: window was already closed\n  (Session info: chrome=81.0.4044.92)"}', expected: 'Delete', reason: not equal</div>
+<div class="step-row">
+<div class="step-cell skipped">When click(deleteButton)</div>
+<div class="time-cell skipped">0</div>
+</div>
+<div class="step-row">
+<div class="step-cell skipped">Then match exists(deleteButton).exist == null</div>
+<div class="time-cell skipped">0</div>
 </div>
 </div>
 </div>

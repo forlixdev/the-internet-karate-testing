@@ -20,7 +20,7 @@ function fn() {
   // set environments variables/properties
   var config = {
     env: env,
-    host: 'http://127.0.0.1:7080'
+    host: 'http://127.0.0.1:5000'
   };
 
   // Here the properties specified above can be overriden
